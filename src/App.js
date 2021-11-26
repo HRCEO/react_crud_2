@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Modal from "./compornets/modal";
 
 function App() {
+
     const [bookInfo, setBookInfo] = useState([]);
     const [modalOpen, setModalOpen ] = useState(false);
     const [newBookInfo, setNewBookInfo ] = useState({
@@ -10,8 +11,7 @@ function App() {
         author : '',
         review : '',
     });
-    const openModal = (modalId) => {
-        console.log(modalId);
+    const openModal = () => {
         setModalOpen(true);
     }
     const closeModal = () => {

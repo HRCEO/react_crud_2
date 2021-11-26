@@ -1,16 +1,19 @@
 import React from 'react';
-import Modal from "./modal";
 
 const BookTitle = ({bookInfo}) => {
-
-
     return (
         <>
             {bookInfo.name}
             {bookInfo.author}
-            <button onClick>Info</button>
+            <button onClick={()=>{
+                Home();
+            }}>Info</button>
         </>
     );
 };
+
+function Home() {
+    return console.log('test');
+}
 
 export default BookTitle;

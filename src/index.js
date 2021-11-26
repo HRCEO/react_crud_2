@@ -1,15 +1,56 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ReactModal from 'react-modal';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
-ReactModal.setAppElement('#root');
+function Home(){
+    return (
+        <div>
+            <h2>Home</h2>
+            Home...
+        </div>
+    )
+}
+function Topics(){
+    return (
+        <div>
+            <h2>Topics</h2>
+            Topics...
+        </div>
+    )
+}
+function Contact(){
+    return (
+        <div>
+            <h2>Contact</h2>
+            Contact...
+        </div>
+    )
+}
+
+function App(){
+    return (
+        <div>
+            <h6>React Router DOM Example</h6>
+        <ui>
+            <li><a href="/">Home</a></li>
+            <li><a href="/Topics">Topics</a></li>
+            <li><a href="/Contact">Contact</a></li>
+        </ui>
+        <Routes>
+            <Route exact path="/" element={<Home/>}/>
+            <Route path="/topics"  element={<Topics/>}/>
+            <Route path="/contact"  element={<Contact/>}/>
+        </Routes>
+        </div>
+    )
+}
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <BrowserRouter>
+            <App />
+    </BrowserRouter>,
   document.getElementById('root')
 );
 
